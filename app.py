@@ -53,7 +53,8 @@ def generate_frames():
             break
 
         frame = cv2.resize(frame, (640, 360))
-        results = model.track(frame, persist=True, conf=0.25, iou=0.4)
+        results = model.track(
+            frame, classes=[0, 1, 2, 3, 5, 6, 7], persist=True, conf=0.25, iou=0.4)
 
         # Draw ROI
         cv2.polylines(frame, [np.array(roi_points, np.int32)],

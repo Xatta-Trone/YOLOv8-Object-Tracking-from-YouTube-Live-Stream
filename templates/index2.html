@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-Time Object Counting</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background-color: #f4f4f4;
+        }
+        .container {
+            margin: 20px auto;
+            max-width: 800px;
+        }
+        .video {
+            display: block;
+            margin: 20px auto;
+            border: 2px solid #000;
+        }
+        .counts {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Real-Time Object Counting</h1>
+        <div class="video">
+            <img src="/video_feed" alt="Video Stream" width="640" height="360">
+        </div>
+        <div class="counts">
+            <h2>Object Counts</h2>
+            <ul id="count-list"></ul>
+        </div>
+        <p>
+            <strong>Live Stream Source:</strong> 
+            <a href="{{ youtube_link }}" target="_blank">Watch on YouTube</a>
+        </p>
+    </div>
+
+    <script>
+        async function fetchCounts() {
+            const response = await fetch('/counts');
+            const data = await response.json();
+            const countList = document.getElementById('count-list');
+            countList.innerHTML = '';
+            for (const [className, count] of Object.entries(data)) {
+                const listItem = document.createElement('li');
+                listItem.textContent = `${className}: ${count}`;
+                countList.appendChild(listItem);
+            }
+        }
+
+        // Update counts every second
+        setInterval(fetchCounts, 1000);
+    </script>
+</body>
+</html>
