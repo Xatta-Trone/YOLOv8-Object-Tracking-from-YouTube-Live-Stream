@@ -65,9 +65,11 @@ docker run -p 8080:8080 yolo-stream
 ## License
 This project is licensed under the MIT License. See `LICENSE` for details.
 
-## Author
-[Your Name] - [Your Contact Info]
+## Preview
 
 ---
 Feel free to contribute and improve this repository by submitting a pull request!
 
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=Xatta-Trone/YOLOv8-Object-Tracking-from-YouTube-Live-Stream&type=Date)](https://star-history.com/#Xatta-Trone/YOLOv8-Object-Tracking-from-YouTube-Live-Stream&Date)
