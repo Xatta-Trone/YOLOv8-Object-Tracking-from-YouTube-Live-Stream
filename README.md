@@ -66,6 +66,7 @@ docker run -p 8080:8080 yolo-stream
 This project is licensed under the MIT License. See `LICENSE` for details.
 
 ## Preview
+![Screenshot_19-2-2025_155718_147 26 175 106](https://github.com/user-attachments/assets/554c1a2d-7089-43b6-acbb-678a69808c2d)
 
 ---
 Feel free to contribute and improve this repository by submitting a pull request!
